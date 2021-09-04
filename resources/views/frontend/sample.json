@@ -1,0 +1,181 @@
+{
+    "draw": 1,
+    "recordsTotal": 3,
+    "recordsFiltered": 3,
+    "data": [
+        {
+            "id": 1,
+            "uuid": "ba097b2d-a482-4b06-a03a-147193d5d58e",
+            "course_id": 2,
+            "title": "1. Learn the fundamental",
+            "objective": "Learn more about the basic programming",
+            "sortOrder": 1,
+            "created_at": "2021-08-31T22:57:03.000000Z",
+            "updated_at": "2021-08-31T22:57:07.000000Z",
+            "lessons": [
+                {
+                    "id": 6,
+                    "uuid": "ba097b2d-a482-4b06-a03a-147193d5d58a",
+                    "section_id": 1,
+                    "course_id": 2,
+                    "lesson_type": "lecture",
+                    "title": "1.1 Learn the programming",
+                    "description": "description of the thing",
+                    "content_type": "video",
+                    "duration": "120.00",
+                    "article_body": "learn more about it",
+                    "preview": false,
+                    "sortOrder": 1,
+                    "created_at": "2021-09-01T00:19:49.000000Z",
+                    "updated_at": "2021-09-01T00:19:49.000000Z"
+                },
+                {
+                    "id": 7,
+                    "uuid": "ba097b2d-a482-4b06-a03a-147193d5d58a",
+                    "section_id": 1,
+                    "course_id": 2,
+                    "lesson_type": "lecture",
+                    "title": "1.21 Learn the programming two",
+                    "description": "description of the thing",
+                    "content_type": "video",
+                    "duration": "110.00",
+                    "article_body": "learn more about it",
+                    "preview": false,
+                    "sortOrder": 2,
+                    "created_at": "2021-09-01T00:19:49.000000Z",
+                    "updated_at": "2021-09-01T00:19:49.000000Z"
+                }
+            ],
+            "action": "                        <div class=\"btn-group btn-group-sm dropleft\">\n                             <button type=\"button\" class=\"btn btn-danger dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                              <small>Actions<\/small>\n                             <\/button>\n                             <div class=\"dropdown-menu small\">\n                                <a class='dropdown-item small'\n                                  href='\/course\/1\/sections'>\n                                  <i class=\"bi-intersect pr-2\"><\/i> Sections\n                                <\/a>\n                                <a class='dropdown-item small'\n                                  href='javascript:void(0)'\n                                  id=\"1\">\n                                  <i class=\"bi-eye-slash pr-2\"><\/i> View\n                                <\/a>\n                                <a class='dropdown-item small' id='1' href='javascript:void(0)'>\n                                  <i class=\"bi-pencil pr-2\"><\/i> Edit\n                                <\/a>\n                                <a class='dropdown-item small' id='1' href='javascript:void(0)'>\n                                  <i class='bi-trash pr-2'><\/i> Delete\n                                <\/a>\n                            <\/div>\n                        <\/div>"
+        },
+        {
+            "id": 2,
+            "uuid": "ba097b2d-a482-4b06-a03a-147193d5d58a",
+            "course_id": 2,
+            "title": "2. Learn the basic programming in java",
+            "objective": "Importance of basic coding",
+            "sortOrder": 2,
+            "created_at": "2021-08-31T22:57:03.000000Z",
+            "updated_at": "2021-08-31T22:57:07.000000Z",
+            "lessons": [
+                {
+                    "id": 8,
+                    "uuid": "ba097b2d-a482-4b06-a03a-147193d5d58b",
+                    "section_id": 2,
+                    "course_id": 2,
+                    "lesson_type": "lecture",
+                    "title": "1.21 Learn the programming two",
+                    "description": "description of the thing",
+                    "content_type": "video",
+                    "duration": "110.00",
+                    "article_body": "learn more about it",
+                    "preview": false,
+                    "sortOrder": 2,
+                    "created_at": "2021-09-01T00:19:49.000000Z",
+                    "updated_at": "2021-09-01T00:19:49.000000Z"
+                }
+            ],
+            "action": "                        <div class=\"btn-group btn-group-sm dropleft\">\n                             <button type=\"button\" class=\"btn btn-danger dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                              <small>Actions<\/small>\n                             <\/button>\n                             <div class=\"dropdown-menu small\">\n                                <a class='dropdown-item small'\n                                  href='\/course\/2\/sections'>\n                                  <i class=\"bi-intersect pr-2\"><\/i> Sections\n                                <\/a>\n                                <a class='dropdown-item small'\n                                  href='javascript:void(0)'\n                                  id=\"2\">\n                                  <i class=\"bi-eye-slash pr-2\"><\/i> View\n                                <\/a>\n                                <a class='dropdown-item small' id='2' href='javascript:void(0)'>\n                                  <i class=\"bi-pencil pr-2\"><\/i> Edit\n                                <\/a>\n                                <a class='dropdown-item small' id='2' href='javascript:void(0)'>\n                                  <i class='bi-trash pr-2'><\/i> Delete\n                                <\/a>\n                            <\/div>\n                        <\/div>"
+        },
+        {
+            "id": 3,
+            "uuid": "ba097b2d-a482-4b06-a03a-147193d5d58c",
+            "course_id": 2,
+            "title": "3. Learn the basic programming in c#",
+            "objective": "Importance of basic coding",
+            "sortOrder": 3,
+            "created_at": "2021-08-31T22:57:03.000000Z",
+            "updated_at": "2021-08-31T22:57:07.000000Z",
+            "lessons": [],
+            "action": "                        <div class=\"btn-group btn-group-sm dropleft\">\n                             <button type=\"button\" class=\"btn btn-danger dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                              <small>Actions<\/small>\n                             <\/button>\n                             <div class=\"dropdown-menu small\">\n                                <a class='dropdown-item small'\n                                  href='\/course\/3\/sections'>\n                                  <i class=\"bi-intersect pr-2\"><\/i> Sections\n                                <\/a>\n                                <a class='dropdown-item small'\n                                  href='javascript:void(0)'\n                                  id=\"3\">\n                                  <i class=\"bi-eye-slash pr-2\"><\/i> View\n                                <\/a>\n                                <a class='dropdown-item small' id='3' href='javascript:void(0)'>\n                                  <i class=\"bi-pencil pr-2\"><\/i> Edit\n                                <\/a>\n                                <a class='dropdown-item small' id='3' href='javascript:void(0)'>\n                                  <i class='bi-trash pr-2'><\/i> Delete\n                                <\/a>\n                            <\/div>\n                        <\/div>"
+        }
+    ],
+    "input": {
+        "draw": "1",
+        "columns": [
+            {
+                "data": null,
+                "name": null,
+                "searchable": "true",
+                "orderable": "false",
+                "search": {
+                    "value": null,
+                    "regex": "false"
+                }
+            },
+            {
+                "data": "id",
+                "name": "id",
+                "searchable": "true",
+                "orderable": "true",
+                "search": {
+                    "value": null,
+                    "regex": "false"
+                }
+            },
+            {
+                "data": "title",
+                "name": "title",
+                "searchable": "true",
+                "orderable": "true",
+                "search": {
+                    "value": null,
+                    "regex": "false"
+                }
+            },
+            {
+                "data": "objective",
+                "name": "objective",
+                "searchable": "true",
+                "orderable": "true",
+                "search": {
+                    "value": null,
+                    "regex": "false"
+                }
+            },
+            {
+                "data": "sortOrder",
+                "name": "sortOrder",
+                "searchable": "true",
+                "orderable": "true",
+                "search": {
+                    "value": null,
+                    "regex": "false"
+                }
+            },
+            {
+                "data": "created_at",
+                "name": "created_at",
+                "searchable": "true",
+                "orderable": "true",
+                "search": {
+                    "value": null,
+                    "regex": "false"
+                }
+            },
+            {
+                "data": "action",
+                "name": "action",
+                "searchable": "true",
+                "orderable": "false",
+                "search": {
+                    "value": null,
+                    "regex": "false"
+                }
+            }
+        ],
+        "order": [
+            {
+                "column": "0",
+                "dir": "asc"
+            }
+        ],
+        "start": "0",
+        "length": "10",
+        "search": {
+            "value": null,
+            "regex": "false"
+        },
+        "_": "1630426969535"
+    }
+}
