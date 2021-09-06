@@ -14,11 +14,14 @@ class PageController extends Controller
     {
         $courses = Course::with([
             'author:id,first_name,last_name,avatar,created_at',
-            'category:id,name,slug'])
+            'category' => function($query) {
+                $query->where('live', true);
+            }])
             ->where([
                 ['approved', '=', true],
                 ['published', '=', true],
             ])->orderByDesc('created_at')->paginate(12);
+
         return view('index', compact('courses'));
     }
 

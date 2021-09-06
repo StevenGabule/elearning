@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\{Announcement,
     Approval,
+    Category,
     Comment,
     Completion,
     Course,
@@ -14,8 +15,7 @@ use App\Models\{Announcement,
     Payout,
     Review,
     Transaction,
-    User
-};
+    User};
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -334,5 +334,50 @@ EOT;
             return response()->json(['status' => true]);
         }
         return response()->json(['status' => false]);
+    }
+
+    public function category(Request $request)
+    {
+        if ($request->ajax()) {
+            $categories = Category::orderByDesc('created_at')->get();
+            return DataTables::of($categories)->addColumn('action', static function ($data) {
+                $btnEnabled = $data->live ? "Disable" : "Enable";
+                return <<<EOT
+                        <div class="btn-group btn-group-sm dropleft">
+                             <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <small>Actions</small>
+                             </button>
+                             <div class="dropdown-menu small">
+                                <a class='dropdown-item small btn-live'
+                                  href='javascript:void(0)'
+                                  id="$data->id">
+                                  <i class="bi-eye-slash pr-2"></i> $btnEnabled
+                                </a>
+                                <a class='dropdown-item small' id='$data->id' href='javascript:void(0)'>
+                                  <i class="bi-pencil pr-2"></i> Edit
+                                </a>
+                                <a class='dropdown-item small' id='$data->id' href='javascript:void(0)'>
+                                  <i class='bi-trash pr-2'></i> Remove
+                                </a>
+                            </div>
+                        </div>
+EOT;
+            })->rawColumns(['action'])->make(true);
+        }
+        return view('backend.categories.index');
+    }
+
+    public function categoryLive(Request $request)
+    {
+        if ($request->ajax()) {
+            $category = Category::where('id', $request->id)->first();
+            if ($category) {
+                $category->live = !$category->live;
+                $category->updated_at = now();
+                $category->save();
+                return response()->json(['success' => true]);
+            }
+            return response()->json(['success' => false]);
+        }
     }
 }

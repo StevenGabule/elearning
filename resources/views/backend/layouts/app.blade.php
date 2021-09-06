@@ -93,6 +93,11 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link text-white-50 navlink-sidebar" href="{{route('admin.dashboard.categories')}}" style="font-weight: 500">
+                            <i class="bi-tablet-landscape mr-3"></i>  Categories
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link text-white-50 navlink-sidebar" href="{{ route('logout') }}"
                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                             <i class="bi-box-arrow-left mr-3"></i> {{ __('Logout') }}

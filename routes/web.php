@@ -70,5 +70,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
    Route::get('/announcements', 'Admin\AdminController@announcement')->name('admin.dashboard.announcement');
 
    Route::post('/course/approve', 'Admin\AdminController@approvalCourse')->name('admin.course.approve');
+
+   Route::get('/categories', 'Admin\AdminController@category')->name('admin.dashboard.categories');
+   Route::post('/categories', 'Admin\AdminController@categoryLive')->name('admin.category.live');
+
 });
 

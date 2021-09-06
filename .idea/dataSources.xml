@@ -7,20 +7,17 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/elearning</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="elearning@localhost [2]" uuid="dcd3e9fb-0688-4edc-a69c-74ab896a5dd0">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/elearning</jdbc-url>
-      <driver-properties>
-        <property name="serverTimezone" value="Asia/Manila" />
-      </driver-properties>
-    </data-source>
     <data-source source="LOCAL" name="d56k7s6cj4m8t@ec2-52-203-74-38.compute-1.amazonaws.com" uuid="71251516-5206-454d-ab7d-aff6ac1ad211">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://ec2-52-203-74-38.compute-1.amazonaws.com:5432/d56k7s6cj4m8t</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="d6g4h4f4odlj4g@ec2-44-196-170-156.compute-1.amazonaws.com" uuid="794e8160-fa4f-443a-82a9-dc9ba11d6038">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-44-196-170-156.compute-1.amazonaws.com:5432/d6g4h4f4odlj4g</jdbc-url>
     </data-source>
   </component>
 </project>
