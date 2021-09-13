@@ -103,6 +103,9 @@
                                     <a class="dropdown-item" href="{{ route('course.index') }}">
                                         {{ __('Courses') }}
                                     </a>
+                                    <a class="dropdown-item" href="{{ route('instructor.profile') }}">
+                                        {{ __('Profile') }}
+                                    </a>
                                 @endif
 
                                 <a class="dropdown-item" href="{{ route('student.course') }}">

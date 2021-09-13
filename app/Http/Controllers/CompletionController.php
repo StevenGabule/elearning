@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Completion;
 use App\Models\Lesson;
+use App\Models\Payment;
 use Illuminate\Http\Request;
 
 class CompletionController extends Controller
@@ -24,6 +25,13 @@ class CompletionController extends Controller
                     return response()->json(['ok' => true, 'completed' => false]);
                 }
             }
+            
+            $payment = Payment::where([
+                ['course_id', '=', $course_id],
+                ['payer_id', '=', $user_id],
+            ])->first();
+            $payment->update(['status' => 'finalized']);
+
             return response()->json(['ok' => true, 'completed' => true]);
         }
         return response()->json(['ok' => true, 'completed' => false]);

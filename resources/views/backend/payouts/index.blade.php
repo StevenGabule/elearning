@@ -74,6 +74,7 @@
                     {
                         data: 'net_earnings',
                         name: 'net_earnings',
+                        render: data => data
                     },
                     {
                         data: 'total_author_earnings',
@@ -89,8 +90,9 @@
                         name: 'payment_address',
                     },
                     {
-                        data: 'is_processing',
-                        name: 'is_processing',
+                        data: 'is_processed',
+                        name: 'is_processed',
+                        render: data => data ? 'Accepted' : 'Pending',
                     },
                     {
                         data: 'processed_at',

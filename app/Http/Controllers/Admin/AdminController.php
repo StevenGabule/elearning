@@ -270,13 +270,7 @@ EOT;
                                 <a class='dropdown-item small'
                                   href='javascript:void(0)'
                                   id="$data->id">
-                                  <i class="bi-eye-slash pr-2"></i> View
-                                </a>
-                                <a class='dropdown-item small' id='$data->id' href='javascript:void(0)'>
-                                  <i class="bi-pencil pr-2"></i> Edit
-                                </a>
-                                <a class='dropdown-item small' id='$data->id' href='javascript:void(0)'>
-                                  <i class='bi-trash pr-2'></i> Remove
+                                 Process
                                 </a>
                             </div>
                         </div>
@@ -290,19 +284,20 @@ EOT;
     public function refund(Request $request)
     {
         if ($request->ajax()) {
-            $refunds = Refund::with(['user', 'payment', 'transaction', 'course'])
-                ->orderByDesc('created_at')->get();
+            $refunds = Refund::with(['user', 'payment', 'transaction', 'course'])->get();
             return DataTables::of($refunds)->addColumn('action', static function ($data) {
+                $refundId = $data->payment->refund_id;
                 return <<<EOT
                         <div class="btn-group btn-group-sm dropleft">
                              <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <small>Actions</small>
                              </button>
                              <div class="dropdown-menu small">
-                                <a class='dropdown-item small'
+                                <a class='dropdown-item small btn-refund'
                                   href='javascript:void(0)'
-                                  id="$data->id">
-                                  <i class="bi-eye-slash pr-2"></i> View
+                                  data-id="$data->id"
+                                  id="{$refundId}">
+                                  <i class="bi-eye-slash pr-2"></i> Confirm Refund
                                 </a>
                                 <a class='dropdown-item small' id='$data->id' href='javascript:void(0)'>
                                   <i class="bi-pencil pr-2"></i> Edit
@@ -380,4 +375,5 @@ EOT;
             return response()->json(['success' => false]);
         }
     }
+
 }

@@ -88,4 +88,11 @@ class PageController extends Controller
     {
         return view('cart');
     }
+
+    /*display instructor profile*/
+    public function instructorProfile()
+    {
+        $courses = Course::with(['enrollments', 'payments'])->where('user_id', auth()->id())->get();
+        return view('frontend.instructor.profile', compact('courses'));
+    }
 }

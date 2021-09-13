@@ -47,7 +47,15 @@ Route::post('/student/courses', 'CompletionController@store')->name('student.cou
 
 Route::get('/category/{slug}', 'CategoryController@index')->name('category.index');
 Route::get('/instructor', 'Page\PageController@instructor')->name('instructor.index')->middleware('auth');
+Route::get('/instructor/profile', 'Page\PageController@instructorProfile')->name('instructor.profile')->middleware('auth');
 Route::get('/cart', 'Page\PageController@cart')->name('cart.index')->middleware('auth');
+
+// route for refund api
+Route::post('/student/course/refund', 'Student\StudentController@refund')->name('student.course.refund');
+
+Route::post('/instructor/payout', 'PayoutController@store')->name('instructor.course.payout');
+
+
 
 /*
  * ROUTE FOR ADMIN REQUEST
@@ -73,6 +81,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
 
    Route::get('/categories', 'Admin\AdminController@category')->name('admin.dashboard.categories');
    Route::post('/categories', 'Admin\AdminController@categoryLive')->name('admin.category.live');
+
+   Route::post('/course/refund', 'Payment\PaymentController@refund')->name('admin.payment.refund');
 
 });
 

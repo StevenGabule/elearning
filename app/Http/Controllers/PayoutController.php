@@ -2,84 +2,39 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Payment;
 use App\Models\Payout;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PayoutController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
-    }
+        $courseId = $request->input('course_id');
+        $payments = Payment::where('course_id', '=', $courseId)->get();
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Payout  $payout
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Payout $payout)
-    {
-        //
-    }
+        $authorEarning = 0;
+        $netEarning = 0;
+        $totalRefund = 0;
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Payout  $payout
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Payout $payout)
-    {
-        //
-    }
+        foreach ($payments as $payment) {
+            if ($payment->status == 'finalized') {
+                $authorEarning += $payment->author_earning;
+            } else {
+                $totalRefund += $payment->author_earning;
+            }
+            $netEarning += $payment->amount;
+        }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Payout  $payout
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Payout $payout)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Payout  $payout
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Payout $payout)
-    {
-        //
+        Payout::create([
+            'uuid' => Str::uuid(),
+            'user_id' => auth()->id(),
+            'net_earnings' => $netEarning,
+            'total_author_earnings' => $authorEarning,
+            'total_refunds' => $totalRefund,
+            'comment' => $request->input('comment'),
+        ]);
+        return response()->json(['successful' => true], 201);
     }
 }

@@ -1,0 +1,233 @@
+{
+    "draw": 2,
+    "recordsTotal": 1,
+    "recordsFiltered": 1,
+    "data": [
+        {
+            "id": 1,
+            "uuid": "82dafc19-3ec7-456c-9a05-4f00fea0e4e9",
+            "requester_id": 5,
+            "payment_id": 3,
+            "transaction_id": 5,
+            "course_id": 28,
+            "amount": "188.000",
+            "comment": "not working very well",
+            "status": "open",
+            "refunded_to": null,
+            "notes": null,
+            "processed_at": null,
+            "created_at": "2021-09-07T08:29:54.000000Z",
+            "updated_at": "2021-09-07T08:29:54.000000Z",
+            "user": {
+                "id": 5,
+                "uuid": "39691a54-6d85-4762-8689-4a2cd1f16984",
+                "first_name": "marcelo",
+                "last_name": "dupalco",
+                "username": "marcelo",
+                "email": "marc@gmail.com",
+                "avatar": null,
+                "email_verified_at": null,
+                "password_changed_at": null,
+                "active": 1,
+                "confirmation_code": null,
+                "confirmed": false,
+                "timezone": null,
+                "last_login_at": null,
+                "last_login_ip": "127.0.0.1",
+                "to_be_logged_out": false,
+                "tagline": null,
+                "bio": null,
+                "website": null,
+                "linkedIn": null,
+                "facebook": null,
+                "twitter": null,
+                "youtube": null,
+                "github": null,
+                "settings": null,
+                "deleted_at": null,
+                "created_at": "2021-09-07T03:11:50.000000Z",
+                "updated_at": "2021-09-07T03:11:50.000000Z",
+                "user_type": 2
+            },
+            "payment": {
+                "id": 3,
+                "uuid": "4fe75d97-6635-4d1a-a133-6faca65a7a01",
+                "course_id": 28,
+                "payer_id": 5,
+                "payment_method": "PayPal",
+                "amount": "188.00",
+                "description": "sale",
+                "author_earning": "75.20",
+                "affiliate_earning": null,
+                "gateway_payment_id": null,
+                "referred_by": null,
+                "transaction_id": 4,
+                "status": "created",
+                "refund_deadline": "2021-10-07 14:50:31",
+                "refunded_at": null,
+                "created_at": "2021-09-07T06:50:31.000000Z",
+                "updated_at": "2021-09-07T06:50:31.000000Z"
+            },
+            "transaction": {
+                "id": 5,
+                "uuid": "5dd30145-b804-4ef6-a9a8-f3fb4ab9cc0f",
+                "user_id": 5,
+                "type": "debit",
+                "description": "Refund",
+                "long_description": "Refund of &quot;Android App Development Bootcamp 2021 - Build a portfolio!&quot; purchased bymarcelo dupalco",
+                "amount": "-75.20",
+                "created_at": "2021-09-07T08:29:54.000000Z",
+                "updated_at": "2021-09-07T08:29:54.000000Z"
+            },
+            "course": {
+                "id": 28,
+                "uuid": "91ea689a-f626-4e33-919f-7f8a73e12272",
+                "user_id": 2,
+                "category_id": 2,
+                "title": "Android App Development Bootcamp 2021 - Build a portfolio!",
+                "subTitle": "Android App Development for complete beginners, make beautiful apps, get a job in 2021, Java AND Kotlin!",
+                "slug": "android-app-development-bootcamp-2021-build-a-portfolio",
+                "description": "&lt;p&gt;&lt;em&gt;&lt;strong&gt;Android App Development, using Android 10 (Q). Build real apps, make a portfolio, in a brand new course for 2021.&lt;\/strong&gt;&lt;\/em&gt;&lt;\/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;About this course&lt;\/strong&gt;&lt;\/p&gt;\r\n\r\n&lt;p&gt;The Android Development Bootcamp is a brand new, up-to-date course providing the perfect introduction to the real-world Android concepts and skills required to be a successful Android developer in 2021. Whether you are a complete beginner or are coming from another language or platform, this course will go from setting up and installing Android Studio to building real apps that are useful and look great. You&amp;#39;ll gain a deep understanding of the core important aspects of Android app development, and you will be taught by a fully qualified teacher who made a switch from a completely different career into being a Senior Android Engineer at a major UK company making apps for millions of users.&lt;\/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;*Begin by gaining a foundation in XML and Java*&lt;\/strong&gt;&lt;\/p&gt;\r\n\r\n&lt;p&gt;This course won&amp;#39;t patronise you, or have you copying along typing things you don&amp;#39;t understand. No important concept will be glossed over or taken for granted; no, you will have that deep understanding that leads to mastery.&lt;\/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;*A unique Android course that offers a fully integrated curriculum*&lt;\/strong&gt;&lt;\/p&gt;\r\n\r\n&lt;p&gt;Many Android courses teach a few of the concepts in isolation. For example you may see a section on Java separate from the other &amp;quot;Android&amp;quot; sections. But this isn&amp;#39;t how Android works! Android\/Java\/XML are all so heavily intertwined, with our skills developing in all areas as we gain mastery, so why experience them in isolation?&amp;nbsp;&lt;\/p&gt;\r\n\r\n&lt;p&gt;In this course, you will learn what you need to know, the moment you need to know it! Whether it&amp;#39;s working with layout files, programming in Java, you can be sure the key concepts - from Variables, Classes and Methods through to Inheritance, Interfaces and much more - will be introduced at the moment they are relevant, fitting in seamlessly with the rest of the course.&lt;\/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;About me&lt;\/strong&gt;&lt;\/p&gt;\r\n\r\n&lt;p&gt;I am currently employed as a Senior Android Engineer for a major UK company, born and currently living in the north of England, however programming was not where I started my career.&lt;\/p&gt;\r\n\r\n&lt;p&gt;With a successful career behind me as a fully qualified music teacher and professional musician, I&amp;nbsp;made the switch from teaching to software development, teaching myself. I&amp;nbsp;am the proof that you don&amp;#39;t need a computer science degree, or years of commercial experience to be a highly successful Android developer.&lt;\/p&gt;\r\n\r\n&lt;p&gt;What&amp;#39;s more, as I have years of training in teaching, I am highly skilled at breaking down complex topics in ways that are easy to understand and engaging, and I&amp;nbsp;am expert at developing a curriculum where the concepts are introduced in an enjoyable, flowing way, always building upon our existing skills while acquiring new ones.&lt;\/p&gt;\r\n\r\n&lt;p&gt;So, as somebody who decided one day to break into Android app development just like you are at this point, and as a fully qualified teacher, I am uniquely positioned to guide you on your path to also becoming an Android developer, in a way that is fun, carefully designed, engaging, never patronising, and that will get you as excited as I was - and still am - about learning this wonderful skill!&lt;\/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;About you (or, course requirements!)&lt;\/strong&gt;&lt;\/p&gt;\r\n\r\n&lt;p&gt;This is the course for you if:&lt;\/p&gt;\r\n\r\n&lt;ul&gt;\r\n\t&lt;li&gt;\r\n\t&lt;p&gt;You want to make Android apps&lt;\/p&gt;\r\n\t&lt;\/li&gt;\r\n\t&lt;li&gt;\r\n\t&lt;p&gt;You are interested in becoming an employed Android developer, a freelancer, launching your own projects, or just want to try your hand at making real mobile apps&lt;\/p&gt;\r\n\t&lt;\/li&gt;\r\n\t&lt;li&gt;\r\n\t&lt;p&gt;You have no prior programming experience, or some but from a different language\/platform&lt;\/p&gt;\r\n\t&lt;\/li&gt;\r\n\t&lt;li&gt;\r\n\t&lt;p&gt;You want a course that teaches you the real tools Android developers and professionals use in the real world, in an integrated curriculum that will give you a deep understanding of all the key concepts an Android developer needs to know to have a successful career&lt;\/p&gt;\r\n\t&lt;\/li&gt;\r\n&lt;\/ul&gt;\r\n\r\n&lt;p&gt;With regards to what you need to be able to take this course, note the following two points:&lt;\/p&gt;\r\n\r\n&lt;ul&gt;\r\n\t&lt;li&gt;\r\n\t&lt;p&gt;Absolutely zero programming experience is required (although if you have some that&amp;#39;s also fine!) - you will be taught everything you need to know from scratch&lt;\/p&gt;\r\n\t&lt;\/li&gt;\r\n\t&lt;li&gt;\r\n\t&lt;p&gt;You need a computer, either PC (Windows)&amp;nbsp;or a Mac, with an internet connection&lt;\/p&gt;\r\n\t&lt;\/li&gt;\r\n&lt;\/ul&gt;\r\n\r\n&lt;h2&gt;&lt;strong&gt;Who this course is for:&lt;\/strong&gt;&lt;\/h2&gt;\r\n\r\n&lt;ul&gt;\r\n\t&lt;li&gt;Complete beginners to Android app development, even if you have no prior coding experience&lt;\/li&gt;\r\n\t&lt;li&gt;Anyone who wants to make Android apps, or become an Android Developer&lt;\/li&gt;\r\n\t&lt;li&gt;Students who want to be taught by a Senior Android Engineer and fully qualified teacher, who want a deep understanding of Android App Development&lt;\/li&gt;\r\n&lt;\/ul&gt;\r\n",
+                "language": "2",
+                "image": "1630712692_2835200_53a3_9.jpg",
+                "level": "beginner",
+                "featured": false,
+                "price": "188.00",
+                "published": true,
+                "approved": true,
+                "settings": null,
+                "created_at": "2021-09-03T15:44:52.000000Z",
+                "updated_at": "2021-09-03T16:26:20.000000Z"
+            },
+            "action": "                        <div class=\"btn-group btn-group-sm dropleft\">\n                             <button type=\"button\" class=\"btn btn-danger dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                                <small>Actions<\/small>\n                             <\/button>\n                             <div class=\"dropdown-menu small\">\n                                <a class='dropdown-item small'\n                                  href='javascript:void(0)'\n                                  id=\"1\">\n                                  <i class=\"bi-eye-slash pr-2\"><\/i> View\n                                <\/a>\n                                <a class='dropdown-item small' id='1' href='javascript:void(0)'>\n                                  <i class=\"bi-pencil pr-2\"><\/i> Edit\n                                <\/a>\n                                <a class='dropdown-item small' id='1' href='javascript:void(0)'>\n                                  <i class='bi-trash pr-2'><\/i> Remove\n                                <\/a>\n                            <\/div>\n                        <\/div>"
+        }
+    ],
+    "input": {
+        "draw": "2",
+        "columns": [
+            {
+                "data": "id",
+                "name": "id",
+                "searchable": "true",
+                "orderable": "true",
+                "search": {
+                    "value": null,
+                    "regex": "false"
+                }
+            },
+            {
+                "data": "requester_id",
+                "name": "requester_id",
+                "searchable": "true",
+                "orderable": "true",
+                "search": {
+                    "value": null,
+                    "regex": "false"
+                }
+            },
+            {
+                "data": "course_id",
+                "name": "course_id",
+                "searchable": "true",
+                "orderable": "true",
+                "search": {
+                    "value": null,
+                    "regex": "false"
+                }
+            },
+            {
+                "data": "payment_id",
+                "name": "payment_id",
+                "searchable": "true",
+                "orderable": "true",
+                "search": {
+                    "value": null,
+                    "regex": "false"
+                }
+            },
+            {
+                "data": "transaction_id",
+                "name": "transaction_id",
+                "searchable": "true",
+                "orderable": "true",
+                "search": {
+                    "value": null,
+                    "regex": "false"
+                }
+            },
+            {
+                "data": "amount",
+                "name": "amount",
+                "searchable": "true",
+                "orderable": "true",
+                "search": {
+                    "value": null,
+                    "regex": "false"
+                }
+            },
+            {
+                "data": "status",
+                "name": "status",
+                "searchable": "true",
+                "orderable": "true",
+                "search": {
+                    "value": null,
+                    "regex": "false"
+                }
+            },
+            {
+                "data": "refunded_to",
+                "name": "refunded_to",
+                "searchable": "true",
+                "orderable": "true",
+                "search": {
+                    "value": null,
+                    "regex": "false"
+                }
+            },
+            {
+                "data": "processed_at",
+                "name": "processed_at",
+                "searchable": "true",
+                "orderable": "true",
+                "search": {
+                    "value": null,
+                    "regex": "false"
+                }
+            },
+            {
+                "data": "created_at",
+                "name": "created_at",
+                "searchable": "true",
+                "orderable": "true",
+                "search": {
+                    "value": null,
+                    "regex": "false"
+                }
+            },
+            {
+                "data": "action",
+                "name": "action",
+                "searchable": "true",
+                "orderable": "true",
+                "search": {
+                    "value": null,
+                    "regex": "false"
+                }
+            }
+        ],
+        "order": [
+            {
+                "column": "0",
+                "dir": "asc"
+            }
+        ],
+        "start": "0",
+        "length": "10",
+        "search": {
+            "value": "a",
+            "regex": "false"
+        },
+        "_": "1631077783503"
+    }
+}

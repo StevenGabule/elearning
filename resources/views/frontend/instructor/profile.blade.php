@@ -5,56 +5,68 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card text-white mt-5" style="background: #222;">
-                    <div class="card-header h3 bg-transparent border-bottom-0">Your Learning</div>
+                    <div class="card-header h3 bg-transparent border-bottom-0">Your Profile</div>
                     <div class="card-body">
                         <div class="list-group">
                             <div class="row row-cols-1 row-cols-md-4">
-                                @forelse($enrolled as $enroll)
+                                @forelse($courses as $course)
                                     <div class="col mb-4" style="display: flex;flex-flow: row wrap">
                                         <div class="card border-0 shadow-sm rounded-0" style="background: #222222">
-                                            <img
-                                                src="{{ $enroll->course->image != null ? asset('storage/uploads/courses/thumbnail') . '/' . $enroll->course->image : asset('images/frontend/no-image-found.png') }}"
+                                            <img src="{{ $course->image != null ? asset('storage/uploads/courses/thumbnail') . '/' . $course->image : asset('images/frontend/no-image-found.png') }}"
                                                 class="card-img-top" alt="...">
                                             <div class="card-body">
                                                 <h5 class="card-title">
-                                                    <a href="{{ route('student.take_course', ['slug' => $enroll->course->slug]) }}"
-                                                       class="text-white custom-hover">{{ $enroll->course->title }}</a>
+                                                    <a href="{{ route('student.course.fetch', $course->slug)  }}"
+                                                       class="text-white custom-hover">{{ $course->title }}</a>
                                                 </h5>
                                                 <p class="card-text"
-                                                   style="color: #aaa">{{ $enroll->course->subTitle }}</p>
+                                                   style="color: #aaa">{{ $course->subTitle }}</p>
                                             </div>
                                             <div class="card-footer">
                                                 <div class="d-flex justify-content-between">
                                                     <div class="d-flex">
                                                         <div>
                                                             <img width="30" height="30" class="rounded-circle mr-2 ml-2"
-                                                                 src="{{ $enroll->course->avatar != null ?
-                                                    asset('storage/uploads/users/thumbnail') . '/' . $enroll->course->avatar :
+                                                                 src="{{ $course->avatar != null ?
+                                                    asset('storage/uploads/users/thumbnail') . '/' . $course->avatar :
                                                     asset('images/frontend/no-image-found.png') }}" alt="">
                                                         </div>
                                                         <div>
-                                                            <h6 class="small text-white">{{ $enroll->course->author->first_name . ' ' . $enroll->course->author->last_name }}</h6>
-                                                            <h6 class="small text-white">{{ date_format($enroll->course->author->created_at, 'j F, Y')}}</h6>
+                                                            <h6 class="small text-white">{{ $course->author->first_name . ' ' . $course->author->last_name }}</h6>
+                                                            <h6 class="small text-white">{{ date_format($course->created_at, 'j F, Y')}}</h6>
                                                         </div>
                                                     </div><!-- first d-flex -->
 
                                                     <div class="d-flex">
                                                         <div class="text-right mr-2">
                                                             <h6 class="small text-white">1.4 hours</h6>
-                                                            <h6 class="small text-white">{{ $enroll->course->category->name }}</h6>
+                                                            <h6 class="small text-white">{{ $course->category->name }}</h6>
                                                         </div>
                                                     </div><!-- first d-flex -->
                                                 </div>
                                                 <div class="d-flex flex-column pt-3">
-                                                    <a
-                                                        href="{{ route('student.take_course', ['slug' => $enroll->course->slug]) }}"
-                                                        class="btn btn-sm button-danger py-2 btn-block rounded-0">
-                                                        Go to the course
-                                                    </a>
+                                                    <div class="btn btn-sm button-darker btn-block rounded-0">
+                                                        Enrolled: {{ $course->enrollments->count() }} Students
+                                                    </div>
+                                                    <div class="btn btn-sm button-darker btn-block rounded-0">
+                                                        @php
+                                                            $sales=0;
+                                                        @endphp
+                                                        @foreach($course->payments as $sale)
+                                                            @if($sale->status == 'finalized')
+                                                                @php
+                                                                    $sales += $sale->author_earning
+                                                                @endphp
+                                                            @endif
+                                                        @endforeach
+                                                        Sales: {{ number_format($sales, 2)}}
+                                                    </div>
+
                                                     <a href="javascript:void(0)"
                                                        data-toggle="modal"
-                                                       id="{{ $enroll->course->id }}"
-                                                       class="btn btn-sm button-darker py-2 btn-block rounded-0 btnRefund">Refund</a>
+                                                       id="{{ $course->id }}"
+                                                       class="btn btn-sm button-darker py-2 btn-block rounded-0 btnPayout">Payout</a>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -74,7 +86,7 @@
     <!-- Modal -->
     <div class="modal fade" id="refundModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <form id="requestRefundForm" class="modal-content">
+            <form id="requestPayout" class="modal-content">
                 @csrf
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Request a Refund</h5>
@@ -110,18 +122,18 @@
                 }
             });
 
-            $(document).on('click','.btnRefund',function() {
+            $(document).on('click','.btnPayout',function() {
                 var course_id = this.id;
-                $("#requestRefundForm")[0].reset();
+                $("#requestPayout")[0].reset();
                 $("#course_id").val(course_id);
                 $("#refundModal").modal('show')
             })
 
-            $("#requestRefundForm").on('submit', function(e) {
+            $("#requestPayout").on('submit', function(e) {
                 e.preventDefault();
                 const btn = $("#btnSent");
                 $.ajax({
-                    url: '{{ route('student.course.refund') }}',
+                    url: '{{ route('instructor.course.payout') }}',
                     method: 'POST',
                     data: new FormData(this),
                     contentType: false,

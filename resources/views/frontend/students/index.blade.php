@@ -54,7 +54,7 @@ $nextLesson=0;
                             <tr>
                                 <td class="font-weight-bold">Description</td>
                                 <td class=" text-white-50">
-                                    {{ $course->description }}
+                                    {!! $course->description !!}
                                 </td>
                             </tr>
 
@@ -156,6 +156,7 @@ $nextLesson=0;
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
+
             $("#videoPlay").on("ended", closeThat);
 
             function closeThat() {
